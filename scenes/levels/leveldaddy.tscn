@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hh6f24m4khkc" path="res://asset/images/background/theophile-curto-twfbetc3-x4size.jpg" id="2_4kpm1"]
 [ext_resource type="Texture2D" uid="uid://ds27ll2byoao5" path="res://asset/images/background/Green.png" id="2_d5qry"]
 [ext_resource type="Texture2D" uid="uid://b1qdw1u5jay6e" path="res://asset/images/Tilemap/Tileset.png" id="3_4kpm1"]
+[ext_resource type="Texture2D" uid="uid://6h22f2i8f8j4" path="res://asset/images/background/CITY.png" id="3_lomah"]
 [ext_resource type="PackedScene" uid="uid://r2pgajog0bbl" path="res://scenes/snail.tscn" id="5_tqp7l"]
 [ext_resource type="AudioStream" uid="uid://b50qi1m7imnpd" path="res://asset/sounds/CELESTE_PROLOGUE_INTRO_FILE.mp3" id="6_4kpm1"]
 
@@ -314,10 +315,16 @@ texture = ExtResource("2_d5qry")
 stretch_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1756960139]
+visible = false
 offset_right = 642.6667
 offset_bottom = 359.0
 texture = ExtResource("2_4kpm1")
 expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1820017693]
+offset_right = 643.0
+offset_bottom = 361.33334
+texture = ExtResource("3_lomah")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1704705120]
 texture_filter = 1
