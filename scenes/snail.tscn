@@ -87,7 +87,7 @@ size = Vector2(32.333336, 13.666667)
 [sub_resource type="CircleShape2D" id="CircleShape2D_oipu0"]
 radius = 10.338709
 
-[node name="snail" type="Area2D" unique_id=2093878282]
+[node name="Player" type="Area2D" unique_id=2093878282]
 scale = Vector2(3, 3)
 script = ExtResource("1_oqbjf")
 
@@ -107,7 +107,4 @@ shape = SubResource("RectangleShape2D_jnfq2")
 position = Vector2(6.666667, -0.33333334)
 shape = SubResource("CircleShape2D_oipu0")
 
-[node name="Timer" type="Timer" parent="." unique_id=529017917]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

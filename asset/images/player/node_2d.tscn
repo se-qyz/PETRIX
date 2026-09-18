@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dio31t3c4jtsd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oipu0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oipu0"]
+normal = Vector2(1, 0)
+
+[node name="Node2D" type="Node2D" unique_id=435184564]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1376287581]
+physics_material_override = SubResource("PhysicsMaterial_oipu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1964287589]
+shape = SubResource("WorldBoundaryShape2D_oipu0")

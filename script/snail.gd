@@ -14,6 +14,16 @@ func _process(delta: float) -> void:
 	position.x += direction * SPEED * delta
 
 
-func _on_timer_timeout() -> void:
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		pass
+
+
+func _on_player_died() -> void:
+	pass # Replace with function body.
+
+
+func _on_timeout():
 	direction *= -1
 	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
