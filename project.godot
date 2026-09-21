@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Beginner"
+config/name="PETRIX"
 run/main_scene="uid://qcv6ej7ab4t0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://61f15vbjhngp"
 
 [display]
 

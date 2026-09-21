@@ -1,7 +1,8 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 100.0
+signal player_died
+const SPEED = 50.0
 var direction = -1.0
 
 # Called when the node enters the scene tree for the first time.
@@ -17,11 +18,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		pass
-
+		emit_signal("player_died", body)
+ 
 
 func _on_player_died() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_timeout():

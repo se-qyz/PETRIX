@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://vee5xn4yg7dd" path="res://script/player.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dwjqo5akuhf3a" path="res://asset/images/player/CROW_IDLE_NEW-817e.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dspthqjdpilgo" path="res://asset/images/player/CROW_FLY-8186.png" id="5_smehm"]
-[ext_resource type="Script" uid="uid://cbq28ata543rw" path="res://scenes/levels/Health.gd" id="5_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://bqmbbfshi4ex6" path="res://asset/sounds/jump.wav" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
@@ -160,18 +159,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p3pcy"]
-radius = 8.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oipu0"]
-radius = 6.0
-height = 12.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnfq2"]
-size = Vector2(6, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pcy"]
-size = Vector2(22, 4)
+size = Vector2(21, 20)
 
 [node name="Crow" type="CharacterBody2D" unique_id=267252074]
 script = ExtResource("1_qlg0r")
@@ -181,24 +170,10 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8648516
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=63112762]
-position = Vector2(-3, -1)
-shape = SubResource("CircleShape2D_p3pcy")
-script = ExtResource("5_tuyoq")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=270495553]
-position = Vector2(-7, -4)
-shape = SubResource("CapsuleShape2D_oipu0")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=499206857]
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_jnfq2")
-
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1311996563]
-position = Vector2(1, 2)
+position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_p3pcy")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=991375392]

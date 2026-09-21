@@ -4,13 +4,14 @@ class_name Player
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
-@onready var healthbar = $"../CanvasLayer/Health"
+
 
 
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -950.0
+const JUMP_VELOCITY = -650.0
+
 
 func _physics_process(delta: float) -> void:
 	
