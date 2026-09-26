@@ -82,10 +82,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnfq2"]
-size = Vector2(32.333336, 13.666667)
+size = Vector2(32.333336, 9.666667)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oipu0"]
-radius = 10.338709
+radius = 8.339997
 
 [node name="Player" type="Area2D" unique_id=2093878282]
 scale = Vector2(3, 3)
@@ -100,11 +100,11 @@ frame_progress = 0.53498906
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779185563]
-position = Vector2(2.1666665, 3.8333335)
+position = Vector2(2.1666665, 5.8333335)
 shape = SubResource("RectangleShape2D_jnfq2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1439865317]
-position = Vector2(6.666667, -0.33333334)
+position = Vector2(6.3333335, 0.33333334)
 shape = SubResource("CircleShape2D_oipu0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

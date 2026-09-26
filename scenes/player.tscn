@@ -58,6 +58,10 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("3_tuyoq")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("5_smehm")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("5_smehm")
 region = Rect2(32, 0, 32, 32)
@@ -138,7 +142,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ke2ow")
+"texture": SubResource("AtlasTexture_tuyoq")
 }],
 "loop": 1,
 "name": &"jumping",
@@ -168,7 +172,7 @@ script = ExtResource("1_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037123547]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "idle"
 flip_h = true
 

@@ -10,10 +10,16 @@ class_name Player
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -650.0
+const JUMP_VELOCITY = -490.0
+var just_jumped = 0
 
+func respawn():
+	self.global_position = Vector2(36, 151)
 
 func _physics_process(delta: float) -> void:
+	
+	if is_on_floor():
+		just_jumped = 0
 	
 	# Add animation
 	if velocity.x > 1 or velocity.x < -1:
@@ -26,8 +32,9 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "jumping"
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and just_jumped < 2:
 		velocity.y = JUMP_VELOCITY
+		just_jumped = just_jumped + 1
 		jump_sound.play()
 
 	# Get the input direction and handle the movement/deceleration.
@@ -39,7 +46,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:

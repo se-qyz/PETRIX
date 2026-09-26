@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://qcv6ej7ab4t0"]
 
+[ext_resource type="PackedScene" uid="uid://c6pi7plvqnuvd" path="res://scenes/levels/flaptest.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://e7mpyrlupl7o" path="res://scenes/levels/leveldaddy.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D" unique_id=1076768222]
 
+[node name="flaptest" parent="." unique_id=881301007 instance=ExtResource("1_0wfyh")]
+
 [node name="LevelRoot" parent="." unique_id=498145662 instance=ExtResource("1_o5qli")]
-position = Vector2(-55, 24)
+position = Vector2(-52, 24)
