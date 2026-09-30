@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bne2fgsm4tsvk"]
+
+[ext_resource type="Texture2D" uid="uid://b1qdw1u5jay6e" path="res://asset/images/Tilemap/Tileset.png" id="1_bnbus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oipu0"]
+size = Vector2(30, 32)
+
+[sub_resource type="Animation" id="Animation_ktljo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wm8j4"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 50), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rix12"]
+_data = {
+&"RESET": SubResource("Animation_ktljo"),
+&"new_animation": SubResource("Animation_wm8j4")
+}
+
+[node name="Moving Platform Mites" type="Node2D" unique_id=147611263]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=481086796]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=137125205]
+texture_filter = 1
+position = Vector2(-1, 0)
+texture = ExtResource("1_bnbus")
+region_enabled = true
+region_rect = Rect2(160.405, 64, 31, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=360572092]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_oipu0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=546386113]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_rix12")
+autoplay = &"new_animation"

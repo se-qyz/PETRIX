@@ -164,7 +164,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pcy"]
-size = Vector2(21, 20)
+size = Vector2(16, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oipu0"]
+radius = 8.0
 
 [node name="Crow" type="CharacterBody2D" unique_id=267252074]
 script = ExtResource("1_qlg0r")
@@ -172,13 +175,19 @@ script = ExtResource("1_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037123547]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
-animation = &"jumping"
+animation = &"running"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.084562495
 flip_h = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1311996563]
-position = Vector2(0.5, -1)
+position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_p3pcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1178976835]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_oipu0")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=991375392]
 stream = ExtResource("6_tuyoq")
