@@ -2,19 +2,36 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var healthBar = $HealthBar
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
+#health
+var maxHealth = 100
+var health = 100
 
+func _ready():
+	healthBar._set_health_bar(health, maxHealth)
 
+func take_damage(damage:int):
+	health -= damage
+	if health < 1: 
+		respawn()
+	healthBar._change_health(-damage)
+	
+	animated_sprite_2d.animation = "damage"
 
+func take_heal(heal:int):
+	health += heal
+	healthBar._change_health(+heal)
+
+#NEED add respawn cutscene
+func respawn():
+	get_tree().reload_current_scene()
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -490.0
 var just_jumped = 0
-
-func respawn():
-	self.global_position = Vector2(36, 151)
 
 func _physics_process(delta: float) -> void:
 	
@@ -50,3 +67,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
+
+
+func _on_spike_body_entered(body: Node2D) -> void:
+	if "Player" in body.name:
+		body.take_damage(30)
