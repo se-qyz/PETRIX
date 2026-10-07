@@ -1,5 +1,7 @@
 extends Node2D
+@onready var score_label: Label = $"HUD/Score Panel/ScoreLabel"
 
+var score: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,9 +9,15 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 func _setup_level() -> void: 
+	# Connect apples
+	var apples = $LevelRoot.get_node_or_null("Apples")
+	if apples:
+		for enemy in apples.get_children():
+			enemy.collected.connect(increase_score)
+	
 	# Connect enemies
 	var enemies = $LevelRoot.get_node_or_null("Enemies")
 	if enemies:
@@ -22,3 +30,11 @@ func _setup_level() -> void:
 
 func _on_player_died():
 	print("Player killed")
+	
+#------------------
+# SCORE
+#------------------
+
+func increase_score() -> void:
+	score += 1
+	score_label.text = "SCORE: %s" % score
