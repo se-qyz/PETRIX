@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://cco3hax2x40ms"]
 
 [ext_resource type="Script" uid="uid://dmwvg7tlxfa2j" path="res://main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://dgjm45ds6sfgb" path="res://asset/images/UI/Main menu no.2-d7e6.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://do8j0n6jk38fy" path="res://asset/images/UI/Main_Menu_ButtonC.png" id="3_bqqt6"]
+[ext_resource type="VideoStream" uid="uid://bi7mypu4toywj" path="res://asset/images/UI/f9f47b7f-1f35-433b-9e1f-feaa8c38e968.ogv" id="3_wu84c"]
 
 [node name="Main Menu" type="Node2D" unique_id=1829331195]
 script = ExtResource("1_l6cm7")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=420103747]
-texture_filter = 1
-offset_left = 2.0
-offset_top = 10.0
-offset_right = 1918.0
-offset_bottom = 1098.0
-texture = ExtResource("2_bqqt6")
 
 [node name="Button Manager" type="Control" parent="." unique_id=59497051]
 layout_mode = 3
@@ -28,5 +20,11 @@ offset_top = 590.0
 offset_right = 1091.0
 offset_bottom = 854.0
 icon = ExtResource("3_bqqt6")
+flat = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=522548154]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_wu84c")
 
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
