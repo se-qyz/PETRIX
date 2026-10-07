@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d25mc0vcre55a" path="res://scenes/moving_platform.tscn" id="8_4w7n3"]
 [ext_resource type="PackedScene" uid="uid://bne2fgsm4tsvk" path="res://scenes/moving_platform_mites.tscn" id="8_5ymhn"]
 [ext_resource type="PackedScene" uid="uid://ty48ueaovadp" path="res://scenes/killzone.tscn" id="8_a3unr"]
-[ext_resource type="PackedScene" uid="uid://b8kmm07rjx21d" path="res://scenes/apple.tscn" id="10_5ymhn"]
-[ext_resource type="FontFile" uid="uid://csyabuca8ssiq" path="res://asset/fonts/Square-Black.ttf" id="11_w27a8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4w7n3"]
 texture = ExtResource("3_4kpm1")
@@ -783,18 +781,6 @@ texture = ExtResource("3_4kpm1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4w7n3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q17s"]
-bg_color = Color(0.8784314, 0.33333334, 0.49019608, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 5
-
 [node name="LevelRoot" type="Node2D" unique_id=498145662]
 scale = Vector2(3, 3)
 
@@ -1008,46 +994,6 @@ position = Vector2(323.66666, 340)
 
 [node name="Killzone" parent="." unique_id=1364925718 instance=ExtResource("8_a3unr")]
 position = Vector2(122.333336, 394)
-
-[node name="Apples" type="Node2D" parent="." unique_id=1388903427]
-
-[node name="Apple" parent="Apples" unique_id=1530772093 instance=ExtResource("10_5ymhn")]
-position = Vector2(178.33334, 137)
-
-[node name="Apple2" parent="Apples" unique_id=1992177442 instance=ExtResource("10_5ymhn")]
-position = Vector2(-27, 263)
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=299457040]
-
-[node name="Score Panel" type="Panel" parent="HUD" unique_id=1929036588]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -80.0
-offset_top = 20.0
-offset_right = 80.0
-offset_bottom = 70.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5q17s")
-metadata/_edit_use_anchors_ = true
-
-[node name="ScoreLabel" type="Label" parent="HUD/Score Panel" unique_id=1859464101]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -16.0
-offset_right = 54.5
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("11_w27a8")
-theme_override_font_sizes/font_size = 32
-text = "SCORE: 0"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Enemies/snail 1/snail 1 timer" to="Enemies/snail 1" method="_on_timeout"]
 [connection signal="timeout" from="Enemies/snail 1/snail 1a/snail 1a timer" to="Enemies/snail 1/snail 1a" method="_on_timeout"]
