@@ -1,7 +1,6 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-signal player_died
 const SPEED = 50.0
 var direction = -1.0
 
@@ -19,6 +18,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		body.take_damage(34)
+
  
 
 func _on_player_died() -> void:

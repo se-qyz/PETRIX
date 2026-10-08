@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PETRIX"
-run/main_scene="uid://qcv6ej7ab4t0"
+run/main_scene="uid://cco3hax2x40ms"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://61f15vbjhngp"
 
