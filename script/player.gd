@@ -12,20 +12,25 @@ var health = 100
 var is_dead = 0
 var was_attacked = 0
 var damage_sound = 0
+var immunity = 0
 
 
 func _ready():
 	healthBar._set_health_bar(health, maxHealth)
 
 func take_damage(damage:int):
-	$"Damage Timer".start()
-	$TakeDamageSound.play()
-	was_attacked = 1
-	health -= damage
+	if immunity < 1:
+		$"Damage Timer".start()
+		$"Immunity Timer".start()
+		$TakeDamageSound.play()
+		was_attacked = 1
+		immunity = immunity + 1
+		health -= damage
+		healthBar._change_health(-damage)
 	if health < 1:
 		is_dead = is_dead + 1 
 		respawn()
-	healthBar._change_health(-damage)
+
 
 func take_heal(heal:int):
 	health += heal
@@ -99,3 +104,7 @@ func _on_crow_damage_finished() -> void:
 
 func _on_death_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_immunity_timer_timeout() -> void:
+	immunity = 0

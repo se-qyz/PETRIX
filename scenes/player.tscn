@@ -256,6 +256,10 @@ wait_time = 0.8
 one_shot = true
 script = ExtResource("2_smehm")
 
+[node name="Immunity Timer" type="Timer" parent="." unique_id=315036846]
+wait_time = 3.0
+one_shot = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037123547]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
@@ -299,4 +303,5 @@ pitch_scale = 0.79
 
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="Immunity Timer" to="." method="_on_immunity_timer_timeout"]
 [connection signal="finished" from="TakeDamageSound" to="." method="_on_crow_damage_finished"]
