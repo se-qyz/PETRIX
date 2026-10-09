@@ -14,9 +14,19 @@ var was_attacked = 0
 var damage_sound = 0
 var immunity = 0
 
+#knockback
+var knockbackVelocity: Vector2
+var knockbackForce = 500
 
 func _ready():
 	healthBar._set_health_bar(health, maxHealth)
+
+func get_knockback(knockbackDirection, knockbackForce):
+	knockbackVelocity = knockbackDirection * knockbackForce
+	
+	await get_tree().create_timer(0.1).timeout
+	
+	knockbackVelocity = Vector2.ZERO
 
 func take_damage(damage:int):
 	if immunity < 1:
@@ -27,6 +37,10 @@ func take_damage(damage:int):
 		immunity = immunity + 1
 		health -= damage
 		healthBar._change_health(-damage)
+		var knockbackDirection = global_position.direction_to($".".global_position)
+		knockbackDirection.y = 0
+		knockbackDirection.x = -1
+		get_knockback(knockbackDirection, knockbackForce)
 	if health < 1:
 		is_dead = is_dead + 1 
 		respawn()
@@ -48,12 +62,13 @@ const JUMP_VELOCITY = -490.0
 var just_jumped = 0
 
 func _physics_process(delta: float) -> void:
-	
 	if is_on_floor():
 		just_jumped = 0
 	
+	if knockbackVelocity:
+		velocity = knockbackVelocity
+	
 	if was_attacked == 1:
-		velocity.x == 0 and velocity.y == 0
 		$AnimatedSprite2D.play("damage")
 	
 	# Add animation
@@ -64,7 +79,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "idle"
 
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and was_attacked == 0:
 		velocity += get_gravity() * delta
 		animated_sprite_2d.animation = "jumping"
 

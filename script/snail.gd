@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		body.take_damage(34)
-
  
 
 func _on_player_died() -> void:
