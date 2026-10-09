@@ -9,9 +9,10 @@ class_name Player
 #health
 var maxHealth = 100
 var health = 100
-var is_alive = true
+var is_dead = 0
 var was_attacked = 0
 var damage_sound = 0
+
 
 func _ready():
 	healthBar._set_health_bar(health, maxHealth)
@@ -21,7 +22,8 @@ func take_damage(damage:int):
 	$TakeDamageSound.play()
 	was_attacked = 1
 	health -= damage
-	if health < 1: 
+	if health < 1:
+		is_dead = is_dead + 1 
 		respawn()
 	healthBar._change_health(-damage)
 
@@ -31,9 +33,10 @@ func take_heal(heal:int):
 
 #NEED add respawn cutscene
 func respawn():
-	$"Death Timer".start()
-	$DeathSound.play()
-	$"../../AudioStreamPlayer2D".stop()
+	if is_dead == 1:
+		$"Death Timer".start()
+		$DeathSound.play()
+		$"../../AudioStreamPlayer2D".stop()
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -490.0
@@ -43,11 +46,10 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		just_jumped = 0
-
+	
 	if was_attacked == 1:
 		velocity.x == 0 and velocity.y == 0
 		$AnimatedSprite2D.play("damage")
-	
 	
 	# Add animation
 	elif velocity.x > 1 or velocity.x < -1:
@@ -62,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "jumping"
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and just_jumped < 2 and was_attacked == 0:
+	if Input.is_action_just_pressed("jump") and just_jumped < 2 and was_attacked == 0 and is_dead == 0:
 		velocity.y = JUMP_VELOCITY
 		just_jumped = just_jumped + 1
 		jump_sound.play()
@@ -70,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	if direction and was_attacked == 0:
+	if direction and was_attacked == 0 and is_dead == 0:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -78,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
-	elif direction == -1.0:
+	elif direction == -1.0 and is_dead == 0:
 		animated_sprite_2d.flip_h = true
 
 

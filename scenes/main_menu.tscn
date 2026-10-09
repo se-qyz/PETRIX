@@ -45,7 +45,7 @@ max_distance = 4096.0
 stream = ExtResource("5_8ln24")
 
 [node name="Timer" type="Timer" parent="." unique_id=1775780014]
-wait_time = 1.4949999999999999
+wait_time = 1.495
 one_shot = true
 
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]

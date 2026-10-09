@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dga1t3nlp8kqx" path="res://scenes/heal.gd" id="1_8vb04"]
 [ext_resource type="Texture2D" uid="uid://dshmv1v1kdbel" path="res://asset/images/snail/Screenshot 2023-09-22 153802.png" id="1_iej0i"]
+[ext_resource type="AudioStream" uid="uid://bbq4fan60stu1" path="res://asset/sounds/collect_apple.wav" id="3_5fh3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mswm"]
 
@@ -15,5 +16,8 @@ texture = ExtResource("1_iej0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2063559710]
 shape = SubResource("RectangleShape2D_3mswm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1310381966]
+stream = ExtResource("3_5fh3v")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
