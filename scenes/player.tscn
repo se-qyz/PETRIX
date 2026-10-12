@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bqmbbfshi4ex6" path="res://asset/sounds/jump.wav" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://cimimpyidb0dr" path="res://asset/sounds/fishBite.wav" id="9_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://blaf4g07pd70a" path="res://asset/sounds/death2.wav" id="10_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dp6jbu6j66h7k" path="res://asset/images/player/ImmunityHalo.png" id="11_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("5_smehm")
@@ -276,9 +277,9 @@ shape = SubResource("RectangleShape2D_p3pcy")
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=665980338]
 texture_filter = 1
 offset_left = -15.0
-offset_top = -19.0
+offset_top = -22.0
 offset_right = 15.0
-offset_bottom = -15.0
+offset_bottom = -18.0
 show_percentage = false
 script = ExtResource("6_fjrip")
 
@@ -300,6 +301,14 @@ stream = ExtResource("6_tuyoq")
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=887397390]
 stream = ExtResource("10_y4r1p")
 pitch_scale = 0.79
+
+[node name="ImmunityHalo" type="Node2D" parent="." unique_id=814580910]
+
+[node name="Sprite2D" type="Sprite2D" parent="ImmunityHalo" unique_id=492943872]
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(0.78906244, 0.85937506)
+texture = ExtResource("11_d2wvv")
 
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]

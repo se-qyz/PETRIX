@@ -20,6 +20,7 @@ var knockbackForce = 500
 
 func _ready():
 	healthBar._set_health_bar(health, maxHealth)
+	$ImmunityHalo/Sprite2D.visible = false
 
 func get_knockback(knockbackDirection, knockbackForce):
 	knockbackVelocity = knockbackDirection * knockbackForce
@@ -29,7 +30,11 @@ func get_knockback(knockbackDirection, knockbackForce):
 	knockbackVelocity = Vector2.ZERO
 
 func take_damage(damage:int):
+	if immunity == 0:
+		$ImmunityHalo/Sprite2D.visible = false
+	
 	if immunity < 1:
+		$ImmunityHalo/Sprite2D.visible = true
 		$"Damage Timer".start()
 		$"Immunity Timer".start()
 		$TakeDamageSound.play()
@@ -37,10 +42,11 @@ func take_damage(damage:int):
 		immunity = immunity + 1
 		health -= damage
 		healthBar._change_health(-damage)
-		var knockbackDirection = global_position.direction_to($".".global_position)
-		knockbackDirection.y = 0
-		knockbackDirection.x = -1
-		get_knockback(knockbackDirection, knockbackForce)
+		if is_on_floor():
+			var knockbackDirection = global_position.direction_to($".".global_position)
+			knockbackDirection.y = 0
+			knockbackDirection.x = -1
+			get_knockback(knockbackDirection, knockbackForce)
 	if health < 1:
 		is_dead = is_dead + 1 
 		respawn()
@@ -122,4 +128,5 @@ func _on_death_timer_timeout() -> void:
 
 
 func _on_immunity_timer_timeout() -> void:
+	$ImmunityHalo/Sprite2D.visible = false
 	immunity = 0
