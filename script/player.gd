@@ -128,5 +128,6 @@ func _on_death_timer_timeout() -> void:
 
 
 func _on_immunity_timer_timeout() -> void:
-	$ImmunityHalo/Sprite2D.visible = false
-	immunity = 0
+	if is_dead == 0:
+		$ImmunityHalo/Sprite2D.visible = false
+		immunity = 0

@@ -306,8 +306,8 @@ pitch_scale = 0.79
 
 [node name="Sprite2D" type="Sprite2D" parent="ImmunityHalo" unique_id=492943872]
 texture_filter = 1
-position = Vector2(0, -8)
-scale = Vector2(0.78906244, 0.85937506)
+position = Vector2(0, -9.999999)
+scale = Vector2(0.83203125, 0.8984375)
 texture = ExtResource("11_d2wvv")
 
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
