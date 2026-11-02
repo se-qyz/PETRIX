@@ -61,7 +61,7 @@ func respawn():
 	if is_dead == 1:
 		$"Death Timer".start()
 		$DeathSound.play()
-		$"../../AudioStreamPlayer2D".stop()
+		$"../../Music".stop()
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -490.0

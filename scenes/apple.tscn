@@ -117,15 +117,14 @@ script = ExtResource("1_pg1xk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=526270529]
 texture_filter = 1
-position = Vector2(0, -2.0000002)
-scale = Vector2(0.51, 0.51)
+position = Vector2(0, -0.99999976)
+scale = Vector2(0.53531253, 0.52164066)
 sprite_frames = SubResource("SpriteFrames_oipu0")
 autoplay = "default"
-frame = 5
-frame_progress = 0.1460827
+frame = 3
+frame_progress = 0.85105395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=854177095]
-position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_o1f1w")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=1349482933]
