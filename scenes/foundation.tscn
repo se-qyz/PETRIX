@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://bllw7dl8ta34j"]
 
+[ext_resource type="Texture2D" uid="uid://wi7k1esrxbvy" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 4/Plan 1.png" id="1_amf41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oipu0"]
+size = Vector2(576, 29)
+
 [node name="Foundation" type="Area2D" unique_id=1717837034]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024815374]
 position = Vector2(3, 0)
+texture = ExtResource("1_amf41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360713817]
+position = Vector2(3, 147.5)
+shape = SubResource("RectangleShape2D_oipu0")
