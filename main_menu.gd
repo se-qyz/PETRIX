@@ -18,4 +18,4 @@ func _on_play_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/leveldaddy.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
