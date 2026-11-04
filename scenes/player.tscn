@@ -100,13 +100,17 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("3_tuyoq")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
 atlas = ExtResource("5_smehm")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
 atlas = ExtResource("5_smehm")
 region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("5_smehm")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oipu0"]
 animations = [{
@@ -220,7 +224,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_31cv2")
+"texture": SubResource("AtlasTexture_gl8cc")
 }],
 "loop": 1,
 "name": &"jumping",
@@ -264,10 +268,8 @@ one_shot = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037123547]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
-animation = &"damage"
+animation = &"idle"
 autoplay = "idle"
-frame = 12
-frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1311996563]

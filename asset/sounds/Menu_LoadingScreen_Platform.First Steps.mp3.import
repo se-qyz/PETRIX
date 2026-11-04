@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nhe50xpngi4o"
+path="res://.godot/imported/Menu_LoadingScreen_Platform.First Steps.mp3-430c712a774acd90e655633aab1f9e14.mp3str"
+
+[deps]
+
+source_file="res://asset/sounds/Menu_LoadingScreen_Platform.First Steps.mp3"
+dest_files=["res://.godot/imported/Menu_LoadingScreen_Platform.First Steps.mp3-430c712a774acd90e655633aab1f9e14.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

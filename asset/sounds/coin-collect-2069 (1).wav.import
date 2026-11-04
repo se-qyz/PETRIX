@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcui2150ho6ha"
+path="res://.godot/imported/coin-collect-2069 (1).wav-f4ca6ad4b869f1074853d196e767704a.sample"
+
+[deps]
+
+source_file="res://asset/sounds/coin-collect-2069 (1).wav"
+dest_files=["res://.godot/imported/coin-collect-2069 (1).wav-f4ca6ad4b869f1074853d196e767704a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
