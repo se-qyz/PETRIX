@@ -22,7 +22,7 @@ func _ready():
 	healthBar._set_health_bar(health, maxHealth)
 	$ImmunityHalo.visible = false
 
-func get_knockback(knockbackDirection, knockbackForce):
+func get_knockback(knockbackDirection):
 	knockbackVelocity = knockbackDirection * knockbackForce
 	
 	await get_tree().create_timer(0.1).timeout
@@ -46,7 +46,7 @@ func take_damage(damage:int):
 			var knockbackDirection = global_position.direction_to($".".global_position)
 			knockbackDirection.y = 0
 			knockbackDirection.x = -1
-			get_knockback(knockbackDirection, knockbackForce)
+			get_knockback(knockbackDirection)
 	if health < 1:
 		is_dead = is_dead + 1 
 		respawn()
