@@ -1777,7 +1777,7 @@ sources/0 = SubResource("TileSetAtlasSource_igeo0")
 sources/1 = SubResource("TileSetAtlasSource_y71nm")
 sources/2 = SubResource("TileSetAtlasSource_7plwd")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4w7n3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agrr7"]
 texture = ExtResource("7_noix2")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 0.26115608)
@@ -2546,7 +2546,7 @@ texture = ExtResource("7_noix2")
 
 [sub_resource type="TileSet" id="TileSet_oipu0"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4w7n3")
+sources/0 = SubResource("TileSetAtlasSource_agrr7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g371"]
 texture = ExtResource("10_07dy8")

@@ -15,6 +15,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 stream = ExtResource("3_wu84c")
 autoplay = true
+loop = true
 
 [node name="Button Manager" type="Control" parent="." unique_id=59497051]
 layout_mode = 3
