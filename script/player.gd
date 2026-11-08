@@ -12,17 +12,20 @@ var health = 100
 var is_alive = true
 var was_attacked = 0
 var damage_sound = 0
+var immunity = false
 
 
 func _ready():
 	healthBar._set_health_bar(health, maxHealth)
 
 func take_damage(damage:int):
-	if is_alive == true:
+	if is_alive == true and immunity == false:
 		$"Damage Timer".start()
+		$"Immunity Timer".start()
 		$TakeDamageSound.play()
 		was_attacked = 1
 		health -= damage
+		immunity = true
 		if health < 1: 
 			respawn()
 		healthBar._change_health(-damage)
@@ -67,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "jumping"
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and just_jumped < 2 and was_attacked == 0:
+	if Input.is_action_just_pressed("jump") and just_jumped < 2 and was_attacked == 0 and is_alive == true:
 		velocity.y = JUMP_VELOCITY
 		just_jumped = just_jumped + 1
 		jump_sound.play()
@@ -75,15 +78,15 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	if direction and was_attacked == 0:
+	if direction and was_attacked == 0 and is_alive == true:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	if direction == 1.0:
+	if direction == 1.0 and is_alive == true:
 		animated_sprite_2d.flip_h = false
-	elif direction == -1.0:
+	elif direction == -1.0 and is_alive == true:
 		animated_sprite_2d.flip_h = true
 
 
@@ -102,3 +105,7 @@ func _on_crow_damage_finished() -> void:
 
 func _on_death_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_immunity_timer_timeout() -> void:
+	immunity = false
