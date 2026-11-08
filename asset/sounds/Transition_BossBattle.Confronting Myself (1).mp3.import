@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnpkg1qu7t5lm"
+path="res://.godot/imported/Transition_BossBattle.Confronting Myself (1).mp3-947f89dc884df855ee7c5015c48c86a9.mp3str"
+
+[deps]
+
+source_file="res://asset/sounds/Transition_BossBattle.Confronting Myself (1).mp3"
+dest_files=["res://.godot/imported/Transition_BossBattle.Confronting Myself (1).mp3-947f89dc884df855ee7c5015c48c86a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
