@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://wi7k1esrxbvy" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 4/Plan 1.png" id="10_xidjn"]
 [ext_resource type="Texture2D" uid="uid://ckgv3w15dh41q" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 2/Plan 2.png" id="11_45jfw"]
 [ext_resource type="Texture2D" uid="uid://dqtxkndmhqylw" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 3/Plan 2.png" id="12_8kpy5"]
+[ext_resource type="PackedScene" uid="uid://crakyw7cal8pv" path="res://scenes/snail_foundation.tscn" id="13_bxuut"]
 [ext_resource type="Script" uid="uid://dqgi4fj1ago3c" path="res://flappy.gd" id="13_ycs18"]
 [ext_resource type="Texture2D" uid="uid://dspthqjdpilgo" path="res://asset/images/player/CROW_FLY-8186.png" id="14_ydw67"]
 [ext_resource type="Texture2D" uid="uid://co20k42tpbqv8" path="res://asset/images/player/Fly.png" id="15_iin1y"]
@@ -4243,6 +4244,117 @@ tile_set = SubResource("TileSet_h04ra")
 tile_map_data = PackedByteArray("AAAvAAwAAAAbABMAAAAwAAoAAAAcABEAAAAwAAsAAAAcABIAAAAwAAwAAAAcABMAAAAxAAoAAAAdABEAAAAxAAsAAAAdABIAAAAxAAwAAAAdABMAAAAyAAkAAAAeABAAAAAyAAoAAAAeABEAAAAyAAsAAAAeABIAAAAyAAwAAAAeABMAAAAzAAkAAAAfABAAAAAzAAoAAAAfABEAAAAzAAsAAAAfABIAAAAzAAwAAAAfABMAAAA0AAgAAAAgAA8AAAA0AAkAAAAgABAAAAA0AAoAAAAgABEAAAA0AAsAAAAgABIAAAA0AAwAAAAgABMAAAA1AAgAAAAhAA8AAAA1AAkAAAAhABAAAAA1AAoAAAAhABEAAAA1AAsAAAAhABIAAAA1AAwAAAAhABMAAAA2AAoAAAAiABEAAAA2AAsAAAAiABIAAAA2AAwAAAAiABMAAACtAAoAAAAgAA8AABCsAAoAAAAhAA8AABCvAAsAAAAeABAAABCuAAsAAAAfABAAABCtAAsAAAAgABAAABCsAAsAAAAhABAAABCxAAwAAAAcABEAABCwAAwAAAAdABEAABCvAAwAAAAeABEAABCuAAwAAAAfABEAABCtAAwAAAAgABEAABCsAAwAAAAhABEAABCrAAwAAAAiABEAABCxAA0AAAAcABIAABCwAA0AAAAdABIAABCvAA0AAAAeABIAABCuAA0AAAAfABIAABCtAA0AAAAgABIAABCsAA0AAAAhABIAABCrAA0AAAAiABIAABCyAA4AAAAbABMAABCxAA4AAAAcABMAABCwAA4AAAAdABMAABCvAA4AAAAeABMAABCuAA4AAAAfABMAABCtAA4AAAAgABMAABCsAA4AAAAhABMAABCrAA4AAAAiABMAABDPAAoAAAAhAA8AAADOAAoAAAAgAA8AAADPAAsAAAAhABAAAADOAAsAAAAgABAAAADNAAsAAAAfABAAAADMAAsAAAAeABAAAADQAAwAAAAiABEAAADPAAwAAAAhABEAAADOAAwAAAAgABEAAADNAAwAAAAfABEAAADMAAwAAAAeABEAAADLAAwAAAAdABEAAADKAAwAAAAcABEAAADQAA0AAAAiABIAAADPAA0AAAAhABIAAADOAA0AAAAgABIAAADNAA0AAAAfABIAAADMAA0AAAAeABIAAADLAA0AAAAdABIAAADKAA0AAAAcABIAAADQAA4AAAAiABMAAADPAA4AAAAhABMAAADOAA4AAAAgABMAAADNAA4AAAAfABMAAADMAA4AAAAeABMAAADLAA4AAAAdABMAAADKAA4AAAAcABMAAADJAA4AAAAbABMAAACBAA4AAAAgAA8AAACAAA8AAAAeABAAABB/AA8AAAAfABAAABCCABAAAAAcABEAABCBABAAAAAdABEAABCAABAAAAAeABEAABB/ABAAAAAfABEAABB+ABAAAAAgABEAABB9ABAAAAAhABEAABCCABEAAAAcABIAABCBABEAAAAdABIAABCAABEAAAAeABIAABB/ABEAAAAfABIAABB+ABEAAAAgABIAABB9ABEAAAAhABIAABCDABIAAAAbABMAABCCABIAAAAcABMAABCBABIAAAAdABMAABCAABIAAAAeABMAABB/ABIAAAAfABMAABB+ABIAAAAgABMAABB9ABIAAAAhABMAABB8ABIAAAAiABMAABBuAA4AAAAcABEAAABvAA4AAAAdABEAAABwAA0AAAAeABAAAABwAA4AAAAeABEAAABxAA0AAAAfABAAAABxAA4AAAAfABEAAAByAAwAAAAgAA8AAAByAA0AAAAgABAAAAByAA4AAAAgABEAAABzAAwAAAAhAA8AAABzAA0AAAAhABAAAABzAA4AAAAhABEAAABtABAAAAAbABMAAABuAA8AAAAcABIAAABuABAAAAAcABMAAABvAA8AAAAdABIAAABvABAAAAAdABMAAABwAA8AAAAeABIAAABwABAAAAAeABMAAABxAA8AAAAfABIAAABxABAAAAAfABMAAAByAA8AAAAgABIAAAByABAAAAAgABMAAABzAA8AAAAhABIAAABzABAAAAAhABMAAAB0AA4AAAAiABEAAAB0AA8AAAAiABIAAAB0ABAAAAAiABMAAAB+AA4AAAAgAA8AABB9AA4AAAAhAA8AABB+AA8AAAAgABAAABB9AA8AAAAhABAAABB8ABAAAAAiABEAABB8ABEAAAAiABIAABA=")
 tile_set = SubResource("TileSet_aegon")
 
+[node name="DSnail_Foundation" parent="." unique_id=2093878282 instance=ExtResource("13_bxuut")]
+position = Vector2(571, 657)
+
+[node name="Snail_Foundation2" parent="DSnail_Foundation" unique_id=790649343 instance=ExtResource("13_bxuut")]
+position = Vector2(83.33334, 0)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation3" parent="DSnail_Foundation" unique_id=1911120770 instance=ExtResource("13_bxuut")]
+position = Vector2(163.66666, 0)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation4" parent="DSnail_Foundation" unique_id=585321032 instance=ExtResource("13_bxuut")]
+position = Vector2(248.66666, -4.6666565)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation5" parent="DSnail_Foundation" unique_id=1253300688 instance=ExtResource("13_bxuut")]
+position = Vector2(327.33334, -21.333328)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation6" parent="DSnail_Foundation" unique_id=1358657728 instance=ExtResource("13_bxuut")]
+position = Vector2(409.00003, 21.666672)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation7" parent="DSnail_Foundation" unique_id=702723139 instance=ExtResource("13_bxuut")]
+position = Vector2(489.00003, 32.66667)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation8" parent="DSnail_Foundation" unique_id=238772098 instance=ExtResource("13_bxuut")]
+position = Vector2(574, 11.666672)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation9" parent="DSnail_Foundation" unique_id=1022783840 instance=ExtResource("13_bxuut")]
+position = Vector2(655.6666, -15.333328)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation10" parent="DSnail_Foundation" unique_id=763016832 instance=ExtResource("13_bxuut")]
+position = Vector2(741.3334, 11.3333435)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation11" parent="DSnail_Foundation" unique_id=1679103557 instance=ExtResource("13_bxuut")]
+position = Vector2(818.3334, -10)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation12" parent="DSnail_Foundation" unique_id=240784241 instance=ExtResource("13_bxuut")]
+position = Vector2(901.0001, 10.3333435)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation13" parent="DSnail_Foundation" unique_id=261364706 instance=ExtResource("13_bxuut")]
+position = Vector2(970.3334, 32.66667)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation14" parent="DSnail_Foundation" unique_id=1332649465 instance=ExtResource("13_bxuut")]
+position = Vector2(1029, -5.3333282)
+scale = Vector2(1, 1)
+
+[node name="TSnail_Foundation2" parent="." unique_id=254829999 instance=ExtResource("13_bxuut")]
+position = Vector2(573, -434.00003)
+rotation = 3.1415925
+
+[node name="Snail_Foundation3" parent="TSnail_Foundation2" unique_id=761349663 instance=ExtResource("13_bxuut")]
+position = Vector2(-79.999985, -1.5258789e-05)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation4" parent="TSnail_Foundation2" unique_id=1152157338 instance=ExtResource("13_bxuut")]
+position = Vector2(-163.66667, -1.5258789e-05)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation5" parent="TSnail_Foundation2" unique_id=1392302040 instance=ExtResource("13_bxuut")]
+position = Vector2(-250.66667, 15.9999695)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation6" parent="TSnail_Foundation2" unique_id=481334037 instance=ExtResource("13_bxuut")]
+position = Vector2(-325.33337, 32.333282)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation7" parent="TSnail_Foundation2" unique_id=304735780 instance=ExtResource("13_bxuut")]
+position = Vector2(-414.66675, -10.333374)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation8" parent="TSnail_Foundation2" unique_id=1119858736 instance=ExtResource("13_bxuut")]
+position = Vector2(-490.33337, -32.00006)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation9" parent="TSnail_Foundation2" unique_id=1729892876 instance=ExtResource("13_bxuut")]
+position = Vector2(-576, -16.000046)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation10" parent="TSnail_Foundation2" unique_id=814857285 instance=ExtResource("13_bxuut")]
+position = Vector2(-654, 10.333267)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation11" parent="TSnail_Foundation2" unique_id=1739673236 instance=ExtResource("13_bxuut")]
+position = Vector2(-739.3334, -16.000076)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation12" parent="TSnail_Foundation2" unique_id=1144496262 instance=ExtResource("13_bxuut")]
+position = Vector2(-819.3334, 10.66658)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation13" parent="TSnail_Foundation2" unique_id=1532806189 instance=ExtResource("13_bxuut")]
+position = Vector2(-901, -10.666748)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation14" parent="TSnail_Foundation2" unique_id=821522869 instance=ExtResource("13_bxuut")]
+position = Vector2(-969.0001, -32.0001)
+scale = Vector2(1, 1)
+
+[node name="Snail_Foundation15" parent="TSnail_Foundation2" unique_id=1452881198 instance=ExtResource("13_bxuut")]
+position = Vector2(-1030, 5.333252)
+scale = Vector2(1, 1)
+
 [node name="flappy" type="CharacterBody2D" parent="." unique_id=758901177]
 position = Vector2(-4, -94)
 script = ExtResource("13_ycs18")
@@ -4312,4 +4424,9 @@ script = ExtResource("19_b3p8y")
 
 [node name="Killzone 2" parent="." unique_id=1864805356 instance=ExtResource("18_4eecq")]
 position = Vector2(1440, 328)
+script = ExtResource("20_b3p8y")
+
+[node name="Killzone 3" parent="." unique_id=1244681383 instance=ExtResource("18_4eecq")]
+position = Vector2(1446, -113)
+rotation = 3.1415927
 script = ExtResource("20_b3p8y")

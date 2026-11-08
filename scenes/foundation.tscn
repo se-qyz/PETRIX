@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://bllw7dl8ta34j"]
 
-[ext_resource type="Texture2D" uid="uid://wi7k1esrxbvy" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 4/Plan 1.png" id="1_amf41"]
+[ext_resource type="Script" uid="uid://c7uhp4b0nj48f" path="res://collision_foundation.gd" id="1_346er"]
+[ext_resource type="Texture2D" uid="uid://b4ogs1neu6sn4" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 3/Plan 1.png" id="2_lca5k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oipu0"]
-size = Vector2(576, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7eb4w"]
+size = Vector2(98, 324)
 
-[node name="Foundation" type="Area2D" unique_id=1717837034]
+[node name="Foundation" type="Node2D" unique_id=147611263]
+script = ExtResource("1_346er")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024815374]
-position = Vector2(3, 0)
-texture = ExtResource("1_amf41")
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=481086796]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360713817]
-position = Vector2(3, 147.5)
-shape = SubResource("RectangleShape2D_oipu0")
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=137125205]
+texture_filter = 1
+position = Vector2(-1, 0)
+texture = ExtResource("2_lca5k")
+region_enabled = true
+region_rect = Rect2(315.4612, -0.15701199, 94.06613, 324.35504)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=360572092]
+shape = SubResource("RectangleShape2D_7eb4w")
