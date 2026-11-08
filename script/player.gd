@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-@onready var healthBar = $HealthBar
+@onready var healthBar = $HealthBar/TextureProgressBar
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
@@ -19,7 +19,11 @@ func _ready():
 	healthBar._set_health_bar(health, maxHealth)
 
 func take_damage(damage:int):
+	if health > 33 and is_alive == true:
+		$"Damage Graphic".play("2")
+	
 	if is_alive == true and immunity == false:
+		$ImmunityHalo.show()
 		$"Damage Timer".start()
 		$"Immunity Timer".start()
 		$TakeDamageSound.play()
@@ -36,6 +40,7 @@ func take_heal(heal:int):
 
 #NEED add respawn cutscene
 func respawn():
+	$"Damage Graphic".play("1")
 	is_alive = false
 	$"Death Timer".start()
 	$DeathSound.play()
@@ -52,7 +57,7 @@ func _physics_process(delta: float) -> void:
 
 	
 
-	if was_attacked == 1 and is_alive == true:
+	if was_attacked == 1:
 		velocity.x == 0 and velocity.y == 0
 		$AnimatedSprite2D.play("damage")
 		$"Damage Graphic".visible = true
@@ -109,4 +114,6 @@ func _on_death_timer_timeout() -> void:
 
 
 func _on_immunity_timer_timeout() -> void:
-	immunity = false
+	if is_alive == true:
+		$ImmunityHalo.visible = not $ImmunityHalo.visible
+		immunity = false
