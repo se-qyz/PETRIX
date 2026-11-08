@@ -365,13 +365,13 @@ sprite_frames = SubResource("SpriteFrames_lufl8")
 animation = &"3"
 autoplay = "3"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=509713687]
-zoom = Vector2(1.81, 1.81)
-
 [node name="ImmunityHalo" type="Sprite2D" parent="." unique_id=545566394]
 visible = false
 position = Vector2(-1, -11)
 texture = ExtResource("16_a8ls1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=136894242]
+zoom = Vector2(4.66, 4.66)
 
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]

@@ -1233,9 +1233,9 @@ tile_set = SubResource("TileSet_72x3h")
 [node name="Player" type="Node2D" parent="." unique_id=174954498]
 
 [node name="Player" parent="Player" unique_id=267252074 instance=ExtResource("1_02w4s")]
-position = Vector2(525, 341)
+position = Vector2(513.105, 341)
 
-[node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1946470398]
-position = Vector2(-525, -341)
-anchor_mode = 0
-zoom = Vector2(1.5, 1.5)
+[node name="Camera2D" parent="Player/Player" index="11" unique_id=136894242]
+zoom = Vector2(5.07, 5.07)
+
+[editable path="Player/Player"]
