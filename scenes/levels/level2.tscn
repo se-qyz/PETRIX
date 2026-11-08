@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://co20k42tpbqv8" path="res://asset/images/player/Fly.png" id="15_iin1y"]
 [ext_resource type="PackedScene" uid="uid://b8kmm07rjx21d" path="res://scenes/apple.tscn" id="16_6igki"]
 [ext_resource type="Texture2D" uid="uid://dvfuil7v40d54" path="res://asset/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="17_hlvfl"]
+[ext_resource type="PackedScene" uid="uid://ty48ueaovadp" path="res://scenes/killzone.tscn" id="18_4eecq"]
+[ext_resource type="Script" uid="uid://wqmg6yxxaecf" path="res://scenes/next_level_3.gd" id="19_b3p8y"]
+[ext_resource type="Script" uid="uid://bhd1l4242a6rx" path="res://scenes/killzone2.gd" id="20_b3p8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r2ys"]
 texture = ExtResource("3_4eecq")
@@ -4301,3 +4304,12 @@ texture_filter = 1
 position = Vector2(3666, 160)
 sprite_frames = SubResource("SpriteFrames_u14ie")
 autoplay = "default"
+
+[node name="To Level 3" parent="." unique_id=1364925718 instance=ExtResource("18_4eecq")]
+position = Vector2(3714, 108.99999)
+rotation = -1.5707964
+script = ExtResource("19_b3p8y")
+
+[node name="Killzone 2" parent="." unique_id=1864805356 instance=ExtResource("18_4eecq")]
+position = Vector2(1440, 328)
+script = ExtResource("20_b3p8y")

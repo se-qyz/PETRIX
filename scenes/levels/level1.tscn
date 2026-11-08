@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ty48ueaovadp" path="res://scenes/killzone.tscn" id="22_p5q6g"]
 [ext_resource type="PackedScene" uid="uid://c4u4cjfaficsu" path="res://scenes/difficult_platform_1.tscn" id="23_vhxpm"]
 [ext_resource type="PackedScene" uid="uid://c2jmjagfmf0tm" path="res://scenes/diffcult_platform_2.tscn" id="24_arkx4"]
+[ext_resource type="Script" uid="uid://rw32s4mcbh7u" path="res://scenes/next_level_2.gd" id="31_07dy8"]
 [ext_resource type="Texture2D" uid="uid://ddmywt7sa2hs8" path="res://asset/images/Decoration Animals/MoDsama on Twitter1.png" id="32_y71nm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwuhu"]
@@ -5150,7 +5151,7 @@ position = Vector2(2515.3333, 243.00002)
 position = Vector2(2958, 182)
 
 [node name="Apple12" parent="Apples" unique_id=1087759445 instance=ExtResource("15_7plwd")]
-position = Vector2(4000.0002, 132)
+position = Vector2(4023.3333, 130)
 
 [node name="Player" type="Node2D" parent="." unique_id=917180077]
 
@@ -5285,13 +5286,18 @@ position = Vector2(1928.6665, 159.99982)
 
 [node name="CheckpointFlag" type="AnimatedSprite2D" parent="." unique_id=1233202617]
 texture_filter = 1
-position = Vector2(4028.3318, 113.00002)
+position = Vector2(4069.6667, 112.00001)
 sprite_frames = SubResource("SpriteFrames_jnfq2")
 autoplay = "default"
 frame_progress = 0.62449014
 
 [node name="Killzone" parent="." unique_id=1364925718 instance=ExtResource("22_p5q6g")]
 position = Vector2(122.333336, 394)
+
+[node name="To Level 2" parent="." unique_id=165980231 instance=ExtResource("22_p5q6g")]
+position = Vector2(4072.0024, 107)
+rotation = -1.5707964
+script = ExtResource("31_07dy8")
 
 [connection signal="timeout" from="Enemies/snail 1/snail 1 timer" to="Enemies/snail 1" method="_on_timeout"]
 [connection signal="timeout" from="Enemies/snail 2/snail 2 timer" to="Enemies/snail 2" method="_on_timeout"]

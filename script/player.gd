@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	if was_attacked == 1 and is_alive == true:
 		velocity.x == 0 and velocity.y == 0
 		$AnimatedSprite2D.play("damage")
+		$"Damage Graphic".visible = true
 	
 	
 	# Add animation

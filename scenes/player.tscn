@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dspthqjdpilgo" path="res://asset/images/player/CROW_FLY-8186.png" id="5_smehm"]
 [ext_resource type="Script" uid="uid://em8tt3qmlh38" path="res://scenes/levels/health_bar.gd" id="6_fjrip"]
 [ext_resource type="AudioStream" uid="uid://bqmbbfshi4ex6" path="res://asset/sounds/jump.wav" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dnxoex8l75xdx" path="res://asset/images/player/Health Bar (Alive).png" id="7_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://cpjyak2frlr7w" path="res://asset/images/player/Health Bar (Dead).png" id="8_jej6c"]
 [ext_resource type="AudioStream" uid="uid://cimimpyidb0dr" path="res://asset/sounds/fishBite.wav" id="9_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://blaf4g07pd70a" path="res://asset/sounds/death2.wav" id="10_y4r1p"]
 
@@ -243,6 +245,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3pcy"]
 size = Vector2(21, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
+atlas = ExtResource("7_3v2ag")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
+atlas = ExtResource("7_3v2ag")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("8_jej6c")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lufl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_487ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
 [node name="Crow" type="CharacterBody2D" unique_id=267252074]
 script = ExtResource("1_qlg0r")
 
@@ -300,6 +331,13 @@ stream = ExtResource("6_tuyoq")
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=887397390]
 stream = ExtResource("10_y4r1p")
 pitch_scale = 0.79
+
+[node name="Damage Graphic" type="AnimatedSprite2D" parent="." unique_id=1667235323]
+position = Vector2(-12, -16.999998)
+scale = Vector2(0.012573246, 0.014038083)
+sprite_frames = SubResource("SpriteFrames_lufl8")
+autoplay = "default"
+frame_progress = 0.15807855
 
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]
