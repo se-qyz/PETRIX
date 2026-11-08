@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://bqmbbfshi4ex6" path="res://asset/sounds/jump.wav" id="6_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://cimimpyidb0dr" path="res://asset/sounds/fishBite.wav" id="9_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://blaf4g07pd70a" path="res://asset/sounds/death2.wav" id="10_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://dp6jbu6j66h7k" path="res://asset/images/player/ImmunityHalo.png" id="11_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
 atlas = ExtResource("5_smehm")
@@ -100,17 +99,13 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("3_tuyoq")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
 atlas = ExtResource("5_smehm")
-region = Rect2(224, 0, 32, 32)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
 atlas = ExtResource("5_smehm")
 region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
-atlas = ExtResource("5_smehm")
-region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oipu0"]
 animations = [{
@@ -224,7 +219,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gl8cc")
+"texture": SubResource("AtlasTexture_31cv2")
 }],
 "loop": 1,
 "name": &"jumping",
@@ -261,15 +256,13 @@ wait_time = 0.8
 one_shot = true
 script = ExtResource("2_smehm")
 
-[node name="Immunity Timer" type="Timer" parent="." unique_id=315036846]
-wait_time = 3.0
-one_shot = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1037123547]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oipu0")
-animation = &"idle"
+animation = &"damage"
 autoplay = "idle"
+frame = 12
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1311996563]
@@ -279,9 +272,9 @@ shape = SubResource("RectangleShape2D_p3pcy")
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=665980338]
 texture_filter = 1
 offset_left = -15.0
-offset_top = -22.0
+offset_top = -19.0
 offset_right = 15.0
-offset_bottom = -18.0
+offset_bottom = -15.0
 show_percentage = false
 script = ExtResource("6_fjrip")
 
@@ -304,15 +297,6 @@ stream = ExtResource("6_tuyoq")
 stream = ExtResource("10_y4r1p")
 pitch_scale = 0.79
 
-[node name="ImmunityHalo" type="Node2D" parent="." unique_id=814580910]
-
-[node name="Sprite2D" type="Sprite2D" parent="ImmunityHalo" unique_id=492943872]
-texture_filter = 1
-position = Vector2(0, -9.999999)
-scale = Vector2(0.83203125, 0.8984375)
-texture = ExtResource("11_d2wvv")
-
 [connection signal="timeout" from="Death Timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Damage Timer" to="." method="_on_damage_timer_timeout"]
-[connection signal="timeout" from="Immunity Timer" to="." method="_on_immunity_timer_timeout"]
 [connection signal="finished" from="TakeDamageSound" to="." method="_on_crow_damage_finished"]

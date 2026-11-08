@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qcv6ej7ab4t0"]
 
-[ext_resource type="PackedScene" uid="uid://e7mpyrlupl7o" path="res://scenes/levels/leveldaddy.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bs4jfhyxjkgse" path="res://scenes/levels/level1.tscn" id="1_0wfyh"]
 [ext_resource type="FontFile" uid="uid://csyabuca8ssiq" path="res://asset/fonts/Square-Black.ttf" id="3_sugp2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oipu0"]
@@ -17,8 +17,7 @@ shadow_size = 5
 
 [node name="Main" type="Node2D" unique_id=1076768222]
 
-[node name="LevelRoot" parent="." unique_id=498145662 instance=ExtResource("1_o5qli")]
-position = Vector2(-52, 24)
+[node name="LevelRoot" parent="." unique_id=498145662 instance=ExtResource("1_0wfyh")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1924802077]
 
