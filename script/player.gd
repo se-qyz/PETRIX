@@ -47,7 +47,7 @@ func respawn():
 	
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -490.0
+const JUMP_VELOCITY = -580.0
 var just_jumped = 0
 
 func _physics_process(delta: float) -> void:
