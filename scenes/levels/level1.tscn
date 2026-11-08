@@ -4916,7 +4916,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0jds"]
-size = Vector2(122.33324, 126.33333)
+size = Vector2(113.49987, 151.83334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7plwd"]
 size = Vector2(28.83368, 55.33333)
@@ -5244,6 +5244,7 @@ position = Vector2(4023.3333, 130)
 position = Vector2(41.333332, 153)
 
 [node name="Camera2D" parent="Player/Player" index="11" unique_id=136894242]
+position = Vector2(337.6667, -3.3333335)
 zoom = Vector2(1.725, 1.725)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=514769722]
@@ -5321,8 +5322,8 @@ autostart = true
 script = ExtResource("18_qg8x4")
 
 [node name="titan snail" parent="Enemies" unique_id=1748633779 instance=ExtResource("17_b2isc")]
-position = Vector2(3383.667, 292.6667)
-scale = Vector2(2.28, 2.28)
+position = Vector2(3268.3333, 291.66666)
+scale = Vector2(2.39, 2.39)
 
 [node name="titan snail timer" type="Timer" parent="Enemies/titan snail" unique_id=93278019]
 wait_time = 0.351
@@ -5339,14 +5340,14 @@ stream = ExtResource("26_7plwd")
 volume_db = 12.23
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/CrocBoss" unique_id=1243620932]
-position = Vector2(9.500048, -9.3333435)
-scale = Vector2(1.0182298, 1.0677084)
+position = Vector2(37.666775, -30.66667)
+scale = Vector2(1.4765642, 1.5729167)
 sprite_frames = SubResource("SpriteFrames_4w1hs")
 animation = &"idle"
-frame_progress = 0.4998232
+frame_progress = 0.6976341
 
 [node name="Hitbox" type="CollisionShape2D" parent="Enemies/CrocBoss" unique_id=1685287505]
-position = Vector2(13.666507, -7.6666775)
+position = Vector2(9.25, -20.416672)
 shape = SubResource("RectangleShape2D_q0jds")
 
 [node name="Croc Roar Collision" type="Area2D" parent="Enemies/CrocBoss" unique_id=519658929]
