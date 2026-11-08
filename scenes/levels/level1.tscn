@@ -29,11 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://ty48ueaovadp" path="res://scenes/killzone.tscn" id="22_p5q6g"]
 [ext_resource type="PackedScene" uid="uid://c4u4cjfaficsu" path="res://scenes/difficult_platform_1.tscn" id="23_vhxpm"]
 [ext_resource type="PackedScene" uid="uid://c2jmjagfmf0tm" path="res://scenes/diffcult_platform_2.tscn" id="24_arkx4"]
-[ext_resource type="Script" uid="uid://bwbergdle2o3u" path="res://scenes/levels/croc_boss.gd" id="25_6d4iq"]
-[ext_resource type="Texture2D" uid="uid://b3y6u7b5p0b2a" path="res://asset/images/BOSS/Boss_attack-3ba7.png" id="25_igeo0"]
-[ext_resource type="AudioStream" uid="uid://crfaotdc6ge3b" path="res://asset/sounds/CrosBoss_Attack.wav" id="26_7plwd"]
-[ext_resource type="Texture2D" uid="uid://ckjk8hwa6gbpb" path="res://asset/images/BOSS/Boss_idle part 2-3ca3.png" id="26_y71nm"]
-[ext_resource type="Script" uid="uid://d3rdhnedtx4uf" path="res://scenes/levels/croc_roar_collision.gd" id="27_6d4iq"]
 [ext_resource type="Script" uid="uid://rw32s4mcbh7u" path="res://scenes/next_level_2.gd" id="31_07dy8"]
 [ext_resource type="Texture2D" uid="uid://ddmywt7sa2hs8" path="res://asset/images/Decoration Animals/MoDsama on Twitter1.png" id="32_y71nm"]
 
@@ -4841,86 +4836,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6d4iq"]
-atlas = ExtResource("25_igeo0")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7plwd"]
-atlas = ExtResource("25_igeo0")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_agrr7"]
-atlas = ExtResource("25_igeo0")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2isc"]
-atlas = ExtResource("25_igeo0")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qg8x4"]
-atlas = ExtResource("26_y71nm")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nm6kf"]
-atlas = ExtResource("26_y71nm")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_88m6t"]
-atlas = ExtResource("26_y71nm")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4w1hs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6d4iq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7plwd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_agrr7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2isc")
-}],
-"loop": 1,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qg8x4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nm6kf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nm6kf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_88m6t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qg8x4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qg8x4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qg8x4")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0jds"]
-size = Vector2(113.49987, 151.83334)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7plwd"]
-size = Vector2(28.83368, 55.33333)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tq278"]
 atlas = ExtResource("21_oub7f")
 region = Rect2(0, 0, 64, 64)
@@ -5244,7 +5159,7 @@ position = Vector2(4023.3333, 130)
 position = Vector2(41.333332, 153)
 
 [node name="Camera2D" parent="Player/Player" index="11" unique_id=136894242]
-position = Vector2(337.6667, -3.3333335)
+position = Vector2(-0.333313, 1)
 zoom = Vector2(1.725, 1.725)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=514769722]
@@ -5322,40 +5237,13 @@ autostart = true
 script = ExtResource("18_qg8x4")
 
 [node name="titan snail" parent="Enemies" unique_id=1748633779 instance=ExtResource("17_b2isc")]
-position = Vector2(3268.3333, 291.66666)
+position = Vector2(3430.6665, 163.33333)
 scale = Vector2(2.39, 2.39)
 
 [node name="titan snail timer" type="Timer" parent="Enemies/titan snail" unique_id=93278019]
-wait_time = 0.351
+wait_time = 2.186
 autostart = true
 script = ExtResource("18_qg8x4")
-
-[node name="CrocBoss" type="Area2D" parent="Enemies" unique_id=1350621454]
-position = Vector2(3387, 149.33334)
-script = ExtResource("25_6d4iq")
-
-[node name="Croc Roar SFX" type="AudioStreamPlayer2D" parent="Enemies/CrocBoss" unique_id=1958545348]
-position = Vector2(-3387, -149.33334)
-stream = ExtResource("26_7plwd")
-volume_db = 12.23
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/CrocBoss" unique_id=1243620932]
-position = Vector2(37.666775, -30.66667)
-scale = Vector2(1.4765642, 1.5729167)
-sprite_frames = SubResource("SpriteFrames_4w1hs")
-animation = &"idle"
-frame_progress = 0.6976341
-
-[node name="Hitbox" type="CollisionShape2D" parent="Enemies/CrocBoss" unique_id=1685287505]
-position = Vector2(9.25, -20.416672)
-shape = SubResource("RectangleShape2D_q0jds")
-
-[node name="Croc Roar Collision" type="Area2D" parent="Enemies/CrocBoss" unique_id=519658929]
-script = ExtResource("27_6d4iq")
-
-[node name="Croc Roar Collision" type="CollisionShape2D" parent="Enemies/CrocBoss/Croc Roar Collision" unique_id=1463152547]
-position = Vector2(-214.41699, 20.666656)
-shape = SubResource("RectangleShape2D_7plwd")
 
 [node name="Moving Platform" type="Node2D" parent="." unique_id=1010424222]
 
@@ -5410,8 +5298,5 @@ script = ExtResource("31_07dy8")
 [connection signal="timeout" from="Enemies/snail 7/snail 7 timer" to="Enemies/snail 7" method="_on_timeout"]
 [connection signal="timeout" from="Enemies/snail 8/snail 8 timer" to="Enemies/snail 8" method="_on_timeout"]
 [connection signal="timeout" from="Enemies/titan snail/titan snail timer" to="Enemies/titan snail" method="_on_timeout"]
-[connection signal="body_entered" from="Enemies/CrocBoss" to="Player/Player" method="_on_croc_boss_body_entered"]
-[connection signal="body_entered" from="Enemies/CrocBoss" to="Enemies/CrocBoss" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/CrocBoss/Croc Roar Collision" to="Enemies/CrocBoss/Croc Roar Collision" method="_on_body_entered"]
 
 [editable path="Player/Player"]
