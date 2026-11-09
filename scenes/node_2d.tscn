@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df4u5vxfbn2l2"]
+
+[ext_resource type="VideoStream" uid="uid://cdr7yjyji7wde" path="res://asset/images/Loading Screen/Dark Loading Screen.ogv" id="1_6e84v"]
+
+[node name="Node2D" type="Node2D" unique_id=13964470]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1147240662]
+offset_right = 1914.0
+offset_bottom = 1082.0
+stream = ExtResource("1_6e84v")
