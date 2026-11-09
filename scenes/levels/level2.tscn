@@ -4186,12 +4186,10 @@ animations = [{
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=673444701]
 stream = ExtResource("1_sqrei")
-volume_db = -10.0
 autoplay = true
 
 [node name="Ambience" type="AudioStreamPlayer" parent="Music" unique_id=1942541431]
 stream = ExtResource("2_yhrca")
-volume_db = -10.0
 autoplay = true
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=647903938]
@@ -4419,9 +4417,4 @@ script = ExtResource("19_b3p8y")
 
 [node name="Killzone 2" parent="." unique_id=1864805356 instance=ExtResource("18_4eecq")]
 position = Vector2(1440, 328)
-script = ExtResource("20_b3p8y")
-
-[node name="Killzone 3" parent="." unique_id=1244681383 instance=ExtResource("18_4eecq")]
-position = Vector2(1446, -113)
-rotation = 3.1415927
 script = ExtResource("20_b3p8y")

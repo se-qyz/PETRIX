@@ -11,4 +11,3 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		body.respawn()
-		healthBar._change_health(0)

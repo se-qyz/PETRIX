@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://c4u4cjfaficsu" path="res://scenes/difficult_platform_1.tscn" id="23_vhxpm"]
 [ext_resource type="PackedScene" uid="uid://c2jmjagfmf0tm" path="res://scenes/diffcult_platform_2.tscn" id="24_arkx4"]
 [ext_resource type="Script" uid="uid://rw32s4mcbh7u" path="res://scenes/next_level_2.gd" id="31_07dy8"]
-[ext_resource type="PackedScene" uid="uid://dlhfvcj48jx8f" path="res://panda.tscn" id="32_3gp1u"]
 [ext_resource type="Texture2D" uid="uid://ddmywt7sa2hs8" path="res://asset/images/Decoration Animals/MoDsama on Twitter1.png" id="32_y71nm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwuhu"]
@@ -4925,7 +4924,7 @@ autoplay = true
 
 [node name="Ambience" type="AudioStreamPlayer" parent="Music" unique_id=939977200]
 stream = ExtResource("2_6gwlt")
-volume_db = -30.0
+volume_db = -10.0
 autoplay = true
 
 [node name="Sky" type="TileMapLayer" parent="." unique_id=831593888]
@@ -5155,6 +5154,12 @@ position = Vector2(4023.3333, 130)
 [node name="Player" parent="Player" unique_id=267252074 instance=ExtResource("16_agrr7")]
 position = Vector2(41.333332, 153)
 
+[node name="HealthBar" parent="Player/Player" index="5" unique_id=665980338]
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" parent="Player/Player/HealthBar" index="1" unique_id=7853569]
+metadata/_edit_use_anchors_ = true
+
 [node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1815631876]
 position = Vector2(-167.66667, -104)
 scale = Vector2(1e-05, 1e-05)
@@ -5285,16 +5290,6 @@ position = Vector2(4072.0024, 107)
 rotation = -1.5707964
 script = ExtResource("31_07dy8")
 
-[node name="Panda" type="Node2D" parent="." unique_id=520332797]
-
-[node name="Panda" parent="Panda" unique_id=973355318 instance=ExtResource("32_3gp1u")]
-position = Vector2(295, 132.66678)
-scale = Vector2(2, 2)
-
-[node name="Timer" type="Timer" parent="Panda/Panda" unique_id=793748100]
-autostart = true
-script = ExtResource("18_qg8x4")
-
 [connection signal="timeout" from="Boar/Boar/Timer" to="Boar/Boar" method="_on_time_timeout"]
 [connection signal="timeout" from="Boar/Boar2/Timer" to="Boar/Boar2" method="_on_time_timeout"]
 [connection signal="timeout" from="Boar/Boar3/Timer" to="Boar/Boar3" method="_on_time_timeout"]
@@ -5304,6 +5299,5 @@ script = ExtResource("18_qg8x4")
 [connection signal="timeout" from="Monkey/snail 4/snail 4 timer" to="Monkey/snail 4" method="_on_timeout"]
 [connection signal="timeout" from="Monkey/snail 7/snail 7 timer" to="Monkey/snail 7" method="_on_timeout"]
 [connection signal="timeout" from="Monkey/snail 8/snail 8 timer" to="Monkey/snail 8" method="_on_timeout"]
-[connection signal="timeout" from="Panda/Panda/Timer" to="Panda/Panda" method="_on_time_timeout"]
 
 [editable path="Player/Player"]
