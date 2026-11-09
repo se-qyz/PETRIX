@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bapyl5x3sa2gf" path="res://asset/sounds/long_celeste-prologue-intro-fil.mp3" id="1_db1r7"]
 [ext_resource type="AudioStream" uid="uid://w1d5f5cckyom" path="res://asset/sounds/placidplace-nature-soundstropicaljunglebirds-108380.mp3" id="2_6gwlt"]
+[ext_resource type="AudioStream" uid="uid://cudag1rjbxrn8" path="res://asset/sounds/freesound-community-gibbon-monkey-105463_J79VxWPR.mp3" id="3_3gp1u"]
 [ext_resource type="Texture2D" uid="uid://xmkufa1h8jyi" path="res://asset/images/Environment/Plan 5.png" id="4_vhxpm"]
 [ext_resource type="Texture2D" uid="uid://c2ji7svd7gxbx" path="res://asset/images/Environment/Plan 6.png" id="5_arkx4"]
 [ext_resource type="Texture2D" uid="uid://cnxvb6hp3f8r5" path="res://asset/images/background/Layers/Far-Mountains.png" id="6_c2nc4"]
@@ -4924,6 +4925,11 @@ autoplay = true
 
 [node name="Ambience" type="AudioStreamPlayer" parent="Music" unique_id=939977200]
 stream = ExtResource("2_6gwlt")
+volume_db = -10.0
+autoplay = true
+
+[node name="Ambience2" type="AudioStreamPlayer" parent="Music" unique_id=546227587]
+stream = ExtResource("3_3gp1u")
 volume_db = -10.0
 autoplay = true
 
