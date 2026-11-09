@@ -11,10 +11,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=70286253]
 texture_filter = 1
-offset_left = 334.0
-offset_top = 105.0
-offset_right = 1614.0
-offset_bottom = 825.0
+offset_left = 320.0
+offset_top = 136.0
+offset_right = 1600.0
+offset_bottom = 856.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 offset_transform_enabled = true
