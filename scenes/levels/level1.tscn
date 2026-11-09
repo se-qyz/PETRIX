@@ -5158,9 +5158,11 @@ position = Vector2(4023.3333, 130)
 [node name="Player" parent="Player" unique_id=267252074 instance=ExtResource("16_agrr7")]
 position = Vector2(41.333332, 153)
 
-[node name="Camera2D" parent="Player/Player" index="11" unique_id=136894242]
-position = Vector2(-0.333313, 1)
-zoom = Vector2(1.725, 1.725)
+[node name="Camera2D" type="Camera2D" parent="Player/Player" unique_id=1815631876]
+position = Vector2(-167.66667, -104)
+scale = Vector2(1e-05, 1e-05)
+anchor_mode = 0
+zoom = Vector2(1.91, 1.91)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=514769722]
 

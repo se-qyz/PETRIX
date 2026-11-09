@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dqtxkndmhqylw" path="res://asset/images/Level2_Asset/craftpix-net-323621-free-ancient-temple-pixel-game-backgrounds/PNG/background 3/Plan 2.png" id="12_8kpy5"]
 [ext_resource type="PackedScene" uid="uid://crakyw7cal8pv" path="res://scenes/snail_foundation.tscn" id="13_bxuut"]
 [ext_resource type="Script" uid="uid://dqgi4fj1ago3c" path="res://flappy.gd" id="13_ycs18"]
-[ext_resource type="Texture2D" uid="uid://dspthqjdpilgo" path="res://asset/images/player/CROW_FLY-8186.png" id="14_ydw67"]
 [ext_resource type="Texture2D" uid="uid://co20k42tpbqv8" path="res://asset/images/player/Fly.png" id="15_iin1y"]
 [ext_resource type="PackedScene" uid="uid://b8kmm07rjx21d" path="res://scenes/apple.tscn" id="16_6igki"]
+[ext_resource type="Texture2D" uid="uid://bym34i056grqh" path="res://asset/images/UI/PRESS-SPACE-11-9-2026 (1).png" id="16_bxuut"]
 [ext_resource type="Texture2D" uid="uid://dvfuil7v40d54" path="res://asset/images/Tilemap/Checkpoint (Flag Idle)(64x64).png" id="17_hlvfl"]
 [ext_resource type="PackedScene" uid="uid://ty48ueaovadp" path="res://scenes/killzone.tscn" id="18_4eecq"]
 [ext_resource type="Script" uid="uid://wqmg6yxxaecf" path="res://scenes/next_level_3.gd" id="19_b3p8y"]
@@ -4070,10 +4070,6 @@ texture = ExtResource("5_bxuut")
 [sub_resource type="TileSet" id="TileSet_aegon"]
 sources/0 = SubResource("TileSetAtlasSource_8kmpq")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3m8o"]
-atlas = ExtResource("14_ydw67")
-region = Rect2(160, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sdxgi"]
 atlas = ExtResource("15_iin1y")
 region = Rect2(0, 0, 32, 32)
@@ -4086,16 +4082,9 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("15_iin1y")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ji5xp"]
-atlas = ExtResource("15_iin1y")
-region = Rect2(96, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_sfoeb"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c3m8o")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sdxgi")
 }, {
@@ -4106,11 +4095,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_n3271")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ji5xp")
+"texture": SubResource("AtlasTexture_uq661")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ruqmt"]
@@ -4361,17 +4350,23 @@ script = ExtResource("13_ycs18")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flappy" unique_id=1009949461]
 texture_filter = 1
-position = Vector2(42, 53)
+position = Vector2(51, 116)
 sprite_frames = SubResource("SpriteFrames_sfoeb")
 autoplay = "default"
+frame_progress = 0.24477102
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="flappy" unique_id=1872897117]
-position = Vector2(43.453674, 51.983604)
+position = Vector2(51, 115)
 shape = SubResource("CircleShape2D_ruqmt")
 
 [node name="Camera2D" type="Camera2D" parent="flappy" unique_id=504314860]
-position = Vector2(43.453674, 53.983604)
+position = Vector2(51, 115)
 zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="flappy" unique_id=413103634]
+position = Vector2(68, 364.0625)
+scale = Vector2(0.19335939, 0.21256344)
+texture = ExtResource("16_bxuut")
 
 [node name="Apples" type="Node2D" parent="." unique_id=2092780044]
 
