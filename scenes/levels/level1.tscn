@@ -5118,6 +5118,7 @@ autoplay = "default"
 frame_progress = 0.21584459
 
 [node name="Apples" type="Node2D" parent="." unique_id=858945154]
+texture_filter = 1
 
 [node name="Apple" parent="Apples" unique_id=1530772093 instance=ExtResource("15_7plwd")]
 position = Vector2(175.33334, 130.99985)
@@ -5156,6 +5157,7 @@ position = Vector2(2958, 182)
 position = Vector2(4023.3333, 130)
 
 [node name="Player" type="Node2D" parent="." unique_id=917180077]
+texture_filter = 1
 
 [node name="Player" parent="Player" unique_id=267252074 instance=ExtResource("16_agrr7")]
 position = Vector2(41.333332, 153)
@@ -5173,6 +5175,7 @@ anchor_mode = 0
 zoom = Vector2(1.91, 1.91)
 
 [node name="Boar" type="Node2D" parent="." unique_id=1840303408]
+texture_filter = 1
 
 [node name="Boar" parent="Boar" unique_id=138276065 instance=ExtResource("22_3gp1u")]
 position = Vector2(929.33295, 132.66669)
@@ -5205,6 +5208,7 @@ wait_time = 2.186
 autostart = true
 
 [node name="Monkey" type="Node2D" parent="." unique_id=514769722]
+texture_filter = 1
 position = Vector2(0, -0.33333334)
 
 [node name="snail 1" parent="Monkey" unique_id=1067861438 instance=ExtResource("17_b2isc")]
@@ -5253,6 +5257,7 @@ autostart = true
 script = ExtResource("18_qg8x4")
 
 [node name="Moving Platform" type="Node2D" parent="." unique_id=1010424222]
+texture_filter = 1
 
 [node name="MP1" parent="Moving Platform" unique_id=1854853635 instance=ExtResource("19_nm6kf")]
 position = Vector2(1043.3334, 160.33334)

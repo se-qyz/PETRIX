@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://773mufuvu3nv"
+path="res://.godot/imported/Tony Anderson - Ariana - Tony Anderson.mp3-957725a3303f71447f727766e6f1b9ec.mp3str"
+
+[deps]
+
+source_file="res://asset/sounds/Tony Anderson - Ariana - Tony Anderson.mp3"
+dest_files=["res://.godot/imported/Tony Anderson - Ariana - Tony Anderson.mp3-957725a3303f71447f727766e6f1b9ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
