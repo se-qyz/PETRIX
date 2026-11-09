@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dlhfvcj48jx8f"]
+
+[ext_resource type="Script" uid="uid://53gn3ref6165" path="res://panda.gd" id="1_wjw3y"]
+[ext_resource type="Texture2D" uid="uid://h2yhbx4ndo5d" path="res://asset/images/Animals/Panda Sprite/ATTACK.png" id="2_6lri2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mftd0"]
+atlas = ExtResource("2_6lri2")
+region = Rect2(0, 0, 200, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57hh0"]
+atlas = ExtResource("2_6lri2")
+region = Rect2(200, 0, 200, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nccr"]
+atlas = ExtResource("2_6lri2")
+region = Rect2(400, 0, 200, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn4i7"]
+atlas = ExtResource("2_6lri2")
+region = Rect2(600, 0, 200, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeyfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mftd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57hh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nccr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn4i7")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqixq"]
+size = Vector2(14, 9.5)
+
+[node name="Panda" type="Area2D" unique_id=973355318]
+script = ExtResource("1_wjw3y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1282159030]
+texture_filter = 1
+position = Vector2(1.867188, -0.18750054)
+scale = Vector2(0.10132812, 0.1123047)
+sprite_frames = SubResource("SpriteFrames_eeyfu")
+animation = &"running"
+autoplay = "running"
+frame = 3
+frame_progress = 0.4381158
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=903278104]
+position = Vector2(2, 1.75)
+shape = SubResource("RectangleShape2D_hqixq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

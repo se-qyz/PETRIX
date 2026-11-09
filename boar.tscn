@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b7rv3wlbju05k"]
+
+[ext_resource type="Script" uid="uid://drijvi40qo7n7" path="res://boar.gd" id="1_d1qa8"]
+[ext_resource type="Texture2D" uid="uid://bvmdl0mgccyl1" path="res://asset/images/Animals/Boar Sprites/Boar Walk-4e6b.png" id="2_bgfw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v2dv"]
+atlas = ExtResource("2_bgfw4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1bis"]
+atlas = ExtResource("2_bgfw4")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcsty"]
+atlas = ExtResource("2_bgfw4")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc8l0"]
+atlas = ExtResource("2_bgfw4")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lvwi"]
+atlas = ExtResource("2_bgfw4")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olp25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v2dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1bis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcsty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc8l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lvwi")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47rd1"]
+size = Vector2(11.000002, 11.666667)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s4f2"]
+radius = 6.3420997
+
+[node name="Boar" type="Area2D" unique_id=138276065]
+script = ExtResource("1_d1qa8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1824341951]
+texture_filter = 1
+position = Vector2(1.4999995, -0.41666842)
+scale = Vector2(0.09765624, 0.10872395)
+sprite_frames = SubResource("SpriteFrames_olp25")
+animation = &"running"
+autoplay = "running"
+speed_scale = 2.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1496537527]
+position = Vector2(0.8333335, 6.166666)
+shape = SubResource("RectangleShape2D_47rd1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=711772037]
+position = Vector2(1.937151e-07, -1.3333335)
+shape = SubResource("CircleShape2D_2s4f2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
