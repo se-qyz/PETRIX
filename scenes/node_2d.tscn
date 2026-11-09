@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://df4u5vxfbn2l2"]
 
+[ext_resource type="Script" uid="uid://yvnwfq0vxpyq" path="res://scenes/node_2d.gd" id="1_6e84v"]
+
 [sub_resource type="Animation" id="Animation_6e84v"]
 length = 0.001
 tracks/0/type = "value"
@@ -53,6 +55,7 @@ _data = {
 }
 
 [node name="Loading" type="CanvasLayer" unique_id=1980988643]
+script = ExtResource("1_6e84v")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2002106365]
 offset_right = 1920.0

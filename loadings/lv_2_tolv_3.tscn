@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b26suqaonshme"]
+
+[ext_resource type="Script" uid="uid://bdyvh85ymhgfw" path="res://loadings/lv_2_tolv_3.gd" id="1_d0one"]
+[ext_resource type="Texture2D" uid="uid://cue1vaw6yvn8j" path="res://asset/images/player/progressbartextureback.png" id="2_3vo0m"]
+[ext_resource type="Texture2D" uid="uid://c23t2kalse5e" path="res://asset/images/player/progressbartextureprogress.png" id="3_t7vnt"]
+[ext_resource type="Script" uid="uid://n6ebnp7atngt" path="res://loadings/texture_progress_bar.gd" id="4_mxrsm"]
+[ext_resource type="Texture2D" uid="uid://dnxoex8l75xdx" path="res://asset/images/player/Health Bar (Alive).png" id="5_0vyar"]
+[ext_resource type="Texture2D" uid="uid://cpjyak2frlr7w" path="res://asset/images/player/Health Bar (Dead).png" id="6_cwdvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46fnu"]
+atlas = ExtResource("5_0vyar")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqjn8"]
+atlas = ExtResource("5_0vyar")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfevg"]
+atlas = ExtResource("6_cwdvl")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7igxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46fnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqjn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfevg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.5
+}]
+
+[node name="lv2_tolv_3" type="Node2D" unique_id=1586913152]
+script = ExtResource("1_d0one")
+
+[node name="Timer" type="Timer" parent="." unique_id=1801657727]
+autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Timer" unique_id=242392903]
+offset_left = 748.0
+offset_top = 845.0
+offset_right = 1183.0
+offset_bottom = 921.0
+max_value = 4.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_3vo0m")
+texture_progress = ExtResource("3_t7vnt")
+script = ExtResource("4_mxrsm")
+
+[node name="Timer2" type="Timer" parent="." unique_id=516059425]
+wait_time = 2.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=1576714678]
+wait_time = 3.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="." unique_id=673093292]
+wait_time = 4.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=63053080]
+offset_right = 1923.0
+offset_bottom = 1076.0
+color = Color(6.016344e-08, 0, 0.22171238, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677488386]
+position = Vector2(965, 419)
+scale = Vector2(1.34375, 1.3789063)
+sprite_frames = SubResource("SpriteFrames_7igxh")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]

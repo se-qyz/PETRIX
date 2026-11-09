@@ -4,4 +4,4 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	
 	if body.name == "flappy":
-		get_tree().change_scene_to_file("res://scenes/levels/level3.tscn")
+		get_tree().change_scene_to_file("res://loadings/lv_2_tolv_3.tscn")
