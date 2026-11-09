@@ -57,7 +57,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"blink",
-"speed": 1.0
+"speed": 3.0
 }]
 
 [node name="Eyes" type="Node2D" unique_id=392626476]
@@ -66,10 +66,11 @@ script = ExtResource("1_hnbhq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=574198905]
 sprite_frames = SubResource("SpriteFrames_q0jds")
 animation = &"blink"
+autoplay = "blink"
 frame_progress = 0.4478429
 
 [node name="Timer" type="Timer" parent="." unique_id=245322973]
-wait_time = 5.0
+wait_time = 2.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=825614498]

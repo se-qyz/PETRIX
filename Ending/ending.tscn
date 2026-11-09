@@ -1,23 +1,42 @@
 [gd_scene format=3 uid="uid://dojx30w5no8c3"]
 
+[ext_resource type="Script" uid="uid://opi08t4awodg" path="res://Ending/ending.gd" id="1_bxowh"]
 [ext_resource type="VideoStream" uid="uid://d0o0a2ex4it0k" path="res://asset/images/Ending Assets/Hospital.ogv" id="1_kkg7v"]
+[ext_resource type="AudioStream" uid="uid://773mufuvu3nv" path="res://asset/sounds/Tony Anderson - Ariana - Tony Anderson.mp3" id="2_6epc7"]
 
 [node name="Ending" type="Node2D" unique_id=876606132]
+texture_filter = 1
+script = ExtResource("1_bxowh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=153126457]
+texture_filter = 1
+offset_top = -1.0
 offset_right = 1921.0
 offset_bottom = 1079.0
 color = Color(0, 0, 0, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=70286253]
 texture_filter = 1
-offset_left = 320.0
-offset_top = 136.0
-offset_right = 1600.0
-offset_bottom = 856.0
+offset_left = 316.0
+offset_top = 181.0
+offset_right = 1596.0
+offset_bottom = 901.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 offset_transform_enabled = true
 offset_transform_scale = Vector2(1.2, 1.2)
 stream = ExtResource("1_kkg7v")
 autoplay = true
+loop = true
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=2050056966]
+texture_filter = 1
+stream = ExtResource("2_6epc7")
+autoplay = true
+max_distance = 4096.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1639791550]
+wait_time = 30.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
