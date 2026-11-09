@@ -1,10 +1,63 @@
 [gd_scene format=3 uid="uid://df4u5vxfbn2l2"]
 
-[ext_resource type="VideoStream" uid="uid://cdr7yjyji7wde" path="res://asset/images/Loading Screen/Dark Loading Screen.ogv" id="1_6e84v"]
+[sub_resource type="Animation" id="Animation_6e84v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[node name="Node2D" type="Node2D" unique_id=13964470]
+[sub_resource type="Animation" id="Animation_rf3rd"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1147240662]
-offset_right = 1914.0
-offset_bottom = 1082.0
-stream = ExtResource("1_6e84v")
+[sub_resource type="Animation" id="Animation_4dvvg"]
+resource_name = "fade_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.9666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6e84v"]
+_data = {
+&"RESET": SubResource("Animation_6e84v"),
+&"fade": SubResource("Animation_rf3rd"),
+&"fade_2": SubResource("Animation_4dvvg")
+}
+
+[node name="Loading" type="CanvasLayer" unique_id=1980988643]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2002106365]
+offset_right = 1920.0
+offset_bottom = 1079.0
+color = Color(0.009613376, 1.452947e-06, 0.100479625, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1281170267]
+libraries/ = SubResource("AnimationLibrary_6e84v")
