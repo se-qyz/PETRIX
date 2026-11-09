@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bvsso2lloi55i"]
+
+[ext_resource type="Script" uid="uid://drijvi40qo7n7" path="res://boar.gd" id="1_f7758"]
+[ext_resource type="Script" uid="uid://o7cv4vnbbf54" path="res://script/timer.gd" id="2_f7758"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp13s"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"running",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnfq2"]
+size = Vector2(11.000002, 11.666667)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oipu0"]
+radius = 6.3420997
+
+[node name="Boar" type="Area2D" unique_id=2093878282]
+position = Vector2(929.3331, 133.00009)
+script = ExtResource("1_f7758")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1286125051]
+texture_filter = 1
+position = Vector2(1.4999995, -0.41666842)
+scale = Vector2(0.09765624, 0.10872395)
+sprite_frames = SubResource("SpriteFrames_lp13s")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.45524293
+speed_scale = 2.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779185563]
+position = Vector2(0.8333335, 6.166666)
+shape = SubResource("RectangleShape2D_jnfq2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1439865317]
+position = Vector2(1.937151e-07, -1.3333335)
+shape = SubResource("CircleShape2D_oipu0")
+
+[node name="Boar Timer" type="Timer" parent="." unique_id=1070843157]
+wait_time = 3.916
+autostart = true
+script = ExtResource("2_f7758")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Boar Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Boar Timer" to="." method="_on_time_timeout"]
