@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dojx30w5no8c3"]
+
+[ext_resource type="VideoStream" uid="uid://d0o0a2ex4it0k" path="res://asset/images/Ending Assets/Hospital.ogv" id="1_kkg7v"]
+
+[node name="Ending" type="Node2D" unique_id=876606132]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=153126457]
+offset_right = 1921.0
+offset_bottom = 1079.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=70286253]
+texture_filter = 1
+offset_left = 334.0
+offset_top = 105.0
+offset_right = 1614.0
+offset_bottom = 825.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.2, 1.2)
+stream = ExtResource("1_kkg7v")
+autoplay = true
